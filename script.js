@@ -40,19 +40,23 @@ function flashRainbowColors(callback) {
     }, 2000); // Flash colors for 2 seconds
 }
 
-// Function to display the kuromi.gif initially
-function displaykuromi() {
-    // Get the container where the image will be displayed
-    var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the kuromi
-    // Set the source (file path) for the kuromi image
-    new Image().src = 'kuromi.gif'; // Assuming the kuromi image is named "kuromi.gif"
-    // Set alternative text for the image (for accessibility)
-    new Image().alt = 'kuromi';
-    // When the kuromi image is fully loaded, add it to the image container
-    kuromiImageonload = function() {
-        imageContainer.appendChild(new Image());
-    };
+// Wait for the DOM to be fully loaded
+window.onload = () => {
+    // Create a new image element
+    const kuromiImage = document.createElement("img");
+  
+    // Set the source of the image to the location of your kuromi.gif
+    kuromiImage.src = "kuromi.gif";
+    kuromiImage.alt = "Kuromi";
+  
+    // Optionally, set the width and height of the image
+    kuromiImage.style.width = "300px";  // You can adjust the size
+    kuromiImage.style.height = "auto";  // Keep aspect ratio
+  
+    // Append the image to the div with id 'imageContainer'
+    const container = document.getElementById("imageContainer");
+    container.appendChild(kuromiImage);
+  };
 }
 
 // Function to display the cat-heart.gif
