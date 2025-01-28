@@ -45,14 +45,13 @@ function displaykuromi() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
     // Create a new Image element for the kuromi
-    var kuromiImage = new Image();
     // Set the source (file path) for the kuromi image
-    kuromiImage.src = 'kuromi.gif'; // Assuming the kuromi image is named "kuromi.gif"
+    new Image().src = 'kuromi.gif'; // Assuming the kuromi image is named "kuromi.gif"
     // Set alternative text for the image (for accessibility)
-    kuromiImage.alt = 'kuromi';
+    new Image().alt = 'kuromi';
     // When the kuromi image is fully loaded, add it to the image container
     kuromiImageonload = function() {
-        imageContainer.appendChild(kuromiImage);
+        imageContainer.appendChild(new Image());
     };
 }
 
